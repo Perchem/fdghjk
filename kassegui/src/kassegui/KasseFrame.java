@@ -190,6 +190,11 @@ public class KasseFrame extends javax.swing.JFrame {
         fileMenu.setText("Datei");
 
         finishItem.setText("Beenden");
+        finishItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finishItemActionPerformed(evt);
+            }
+        });
         fileMenu.add(finishItem);
 
         jMenuBar1.add(fileMenu);
@@ -245,13 +250,24 @@ public class KasseFrame extends javax.swing.JFrame {
 
     private void prefDialogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prefDialogActionPerformed
         // TODO add your handling code here:
+        KassePrefDialog kg = new KassePrefDialog(this,true,marktKasse);
+        kg.setVisible(true);
         
+        personalnummerAnzeigeLabel.setText(String.valueOf(marktKasse.getKassPersN()));
+        kassierernameAnzeigeLabel.setText(marktKasse.getKassName());
+        verkauftAnzeigeLabel.setText(String.valueOf(marktKasse.getVerkauft()));
+        kassenStandAnzeigeLabel.setText(String.valueOf(marktKasse.getBalance()));
     }//GEN-LAST:event_prefDialogActionPerformed
 
     private void editMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editMenuActionPerformed
         // TODO add your handling code here:
-            
+  
     }//GEN-LAST:event_editMenuActionPerformed
+
+    private void finishItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishItemActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_finishItemActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -278,6 +294,7 @@ public class KasseFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 //new KasseFrame().setVisible(true);

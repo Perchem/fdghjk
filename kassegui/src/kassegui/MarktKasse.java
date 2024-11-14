@@ -6,7 +6,7 @@ package kassegui;
 
 /**
  *
- * @author belomeda
+ * @author lalaevva
  */
 public class MarktKasse {
     private int kassPersN; //Personalnummer des Kassierers
@@ -16,7 +16,7 @@ public class MarktKasse {
 
     public MarktKasse(){
         this.kassPersN=1;
-        this.kassName="Kuius";
+        this.kassName="Peter Fox";
         this.balance=0;
         this.verkauft=0;
     }
@@ -54,7 +54,7 @@ public class MarktKasse {
         return kassPersN;
     }
     
-    public String setKassPersN(String kassNameNeu){
+    public String setKassName(String kassNameNeu){
         kassName=kassNameNeu;
         return kassName;
     }
